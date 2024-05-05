@@ -6,6 +6,9 @@ struct V3 {
     float z;
 };
 
+struct TODO_cSetInfo {
+};
+
 struct cSetInfoCoord {
     char Name[];
     s32 UnitId;
@@ -14,6 +17,23 @@ struct cSetInfoCoord {
     V3 Scale;
     s32 AreaHitNo;
     
+};
+
+struct cSetInfoCharacter {
+    cSetInfoCoord super_cSetInfoCoord;
+};
+
+struct cSetInfoEnemy {
+// Fields may be in a different order.
+    u32 unk0;
+    u32 unk1;
+    s32 mPresetKind;
+    s32 mGroup;
+    u32 mEmReactNo;
+    s32 mSubGroupNo;
+    u32 unk2;
+    bool mReturnPoint2nd;
+    cSetInfoCharacter super_cSetInfoCharacter;
 };
 
 struct cSetInfoOm {
@@ -39,9 +59,6 @@ struct cSetInfoOm {
     bool IsMyQuest;
     u8 unk[6];
     cSetInfoCoord SetInfoCoord;
-};
-
-struct TODO_cSetInfo {
 };
 
 struct cSetInfoOmGather {
@@ -83,7 +100,7 @@ u32 _readButNotUsed @ $;
 
 u32 setInfoCount @ $;
 
-TODO_cSetInfo setInfoEnemy[setInfoEnemyCount] @ $;
+cSetInfoEnemy setInfoEnemy[setInfoEnemyCount] @ $;
 TODO_cSetInfo setInfoNpc[setInfoNpcCount] @ $;
 TODO_cSetInfo setInfoGeneralPoint[setInfoGeneralPointCount] @ $;
 TODO_cSetInfo setInfoOm[setInfoOmCount] @ $;

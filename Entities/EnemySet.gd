@@ -6,6 +6,8 @@ export var layer_no: int setget _set_layer_no
 export var group_id: int setget _set_group_id
 export var subgroup_id: int setget _set_subgroup_id
 
+export var max_positions: int setget _set_max_positions
+
 var _enemies: Array
 
 func _init(_stage_id: int, _layer_no: int, _group_id: int, _subgroup_id: int):
@@ -13,6 +15,7 @@ func _init(_stage_id: int, _layer_no: int, _group_id: int, _subgroup_id: int):
 	self.layer_no = _layer_no
 	self.group_id = _group_id
 	self.subgroup_id = _subgroup_id
+	self.max_positions = 0
 	_enemies = []
 
 func get_enemies() -> Array:
@@ -44,4 +47,8 @@ func _set_group_id(value: int) -> void:
 	
 func _set_subgroup_id(value: int) -> void:
 	subgroup_id = value
+	emit_changed()
+
+func _set_max_positions(value: int) -> void:
+	max_positions = value
 	emit_changed()

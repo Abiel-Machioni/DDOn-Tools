@@ -95,9 +95,6 @@ margin_right = 378.0
 [node name="Spacer" parent="ui/status_view/container" index="4"]
 margin_left = 382.0
 
-[node name="SettingsWindowDialog" parent="ui" index="4"]
-visible = false
-
 [node name="EnemyFileDialog" parent="ui" index="5"]
 window_title = "Open a File"
 
@@ -108,9 +105,6 @@ window_title = "Open a File"
 [connection signal="player_activated" from="ui" to="." method="_on_ui_player_activated"]
 [connection signal="stage_selected" from="ui" to="." method="_on_ui_stage_selected"]
 [connection signal="tab_changed" from="ui/left/tab" to="." method="_on_tab_tab_changed"]
-[connection signal="player_joined" from="ui/left/tab/Players" to="MapCoordinateSpace/PlayerMarkers" method="_on_Players_player_joined"]
-[connection signal="player_left" from="ui/left/tab/Players" to="MapCoordinateSpace/PlayerMarkers" method="_on_Players_player_left"]
-[connection signal="player_updated" from="ui/left/tab/Players" to="MapCoordinateSpace/PlayerMarkers" method="_on_Players_player_updated"]
 [connection signal="item_selected" from="ui/status_view/container/LayerOptionButton" to="." method="_on_LayerOptionButton_item_selected"]
 [connection signal="item_selected" from="ui/status_view/container/DayNightOptionButton" to="ui/status_view/container/DayNightOptionButton" method="_on_DayNightOptionButton_item_selected"]
 
