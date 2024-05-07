@@ -17,6 +17,21 @@ func _init(_stage_id: int, _layer_no: int, _group_id: int, _subgroup_id: int):
 	self.subgroup_id = _subgroup_id
 	self.max_positions = 0
 	_enemies = []
+	
+func effective_enemy_count() -> int:
+	var day_enemies := 0
+	var night_enemies := 0
+	for enemy in _enemies:
+		if enemy.time_type == 0:
+			day_enemies = day_enemies+1
+			night_enemies = night_enemies+1
+		elif enemy.time_type == 1:
+			day_enemies = day_enemies+1
+		elif enemy.time_type == 2:
+			night_enemies = night_enemies+1
+		else:
+			printerr("Unknown time type"+enemy.time_type)
+	return int(max(day_enemies, night_enemies))
 
 func get_enemies() -> Array:
 	return _enemies
