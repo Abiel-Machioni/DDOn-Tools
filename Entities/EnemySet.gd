@@ -49,7 +49,7 @@ func clear_enemies() -> void:
 	emit_changed()
 	
 func _to_string():
-	return "Enemy Set (%d,%d,%d,%d)" % [stage_id, layer_no, group_id, subgroup_id]
+	return "Enemy Set (%d,%d,%d,%d) - %d/%d spots" % [stage_id, layer_no, group_id, subgroup_id, effective_enemy_count(), max_positions]
 	
 func _set_stage_id(value: int) -> void:
 	stage_id = value

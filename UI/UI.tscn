@@ -267,16 +267,22 @@ text = "Stage Name (ID and Number)"
 
 [node name="Spacer" type="Control" parent="status_view/container"]
 margin_left = 265.0
-margin_right = 783.0
+margin_right = 763.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="SetLabel" type="Label" parent="status_view/container"]
-margin_left = 787.0
+margin_left = 767.0
 margin_top = 3.0
-margin_right = 854.0
+margin_right = 834.0
 margin_bottom = 21.0
 text = "Set (X,X,X,X)"
+
+[node name="Spacer2" type="Control" parent="status_view/container"]
+margin_left = 838.0
+margin_right = 854.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 16, 0 )
 
 [node name="CoordinatesLabel" type="Label" parent="status_view/container"]
 margin_left = 858.0
